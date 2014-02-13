@@ -35,13 +35,23 @@ line-height: 90px;
 
 }
 
-.footer{
+.footer1{
 	color: #FFFFFF;
-	background-color: #585858;
-	width: 86%;
+	background-color: #000000;
+	width: 13%;
 	height: 90px;
 	margin-left: 7%;
+	float: left;
 }
+
+.footer2{
+	color: #000000;
+	background-color: #585858;
+	width: 73%;
+	height: 90px;
+	float: left;
+}
+
 
 .main{
 	width:86%;
@@ -60,4 +70,12 @@ textarea {
 	vertical-align: middle;
 	height: auto;
 	width: auto;
+}
+
+.whitelink {
+	color: white;
+}
+
+a {
+	font-family: sans-serif;
 }
