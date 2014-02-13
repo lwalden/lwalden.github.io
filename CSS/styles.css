@@ -1,12 +1,63 @@
-h1 {
-	color: blue;
+body, html { /* set size of body to full page and remove margins */
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #FFFFFF;
 }
 
-h2 {
-	font-style: italic;
-}
-
-}
-p {
+h2 { 
 	font-family: sans-serif;
+	border-style: double;
+}
+
+.projects { /* avoid double border on table element, set width*/
+border-collapse:collapse;
+width: 100%
+}
+
+table,th, td {
+border: 1px solid #585858;
+}
+
+td {
+	padding:10px;
+}
+
+.header{
+	background-color: #585858;
+	width: 86%;
+	height: 90px;
+	margin-left: 7%;
+	color: #FFFFFF;
+text-align: center;
+line-height: 90px;
+
+}
+
+.footer{
+	color: #FFFFFF;
+	background-color: #585858;
+	width: 86%;
+	height: 90px;
+	margin-left: 7%;
+}
+
+.main{
+	width:86%;
+	margin-left: 7%;
+}
+
+.flashcard {
+	width: 25%;
+}
+
+.answer {
+	opacity: 0;
+}
+
+textarea {
+	vertical-align: middle;
+	height: auto;
+	width: auto;
 }
