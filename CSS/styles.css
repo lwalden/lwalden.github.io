@@ -18,6 +18,16 @@ width: 100%
 
 table,th, td {
 border: 1px solid #585858;
+vertical-align: middle;
+
+}
+
+.no-border{
+	border-style: hidden;
+}
+
+table.flashcard, tr, th{
+	height: 4em;
 }
 
 td {
@@ -59,7 +69,12 @@ line-height: 90px;
 }
 
 .flashcard {
-	width: 25%;
+  width: 86%;
+	margin-left: 7%;
+	margin-right: 7%;
+	border-collapse:collapse;
+
+
 }
 
 .answer {
