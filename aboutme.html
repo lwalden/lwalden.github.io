@@ -1,55 +1,81 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>About me</title>
+<head>
+		<link rel="stylesheet" type="text/css" href="CSS/normalize.css" media="all">
+		<link rel="stylesheet" type="text/css" href="CSS/grid.css" media="all">
 		<link rel="stylesheet" type="text/css" href="CSS/styles.css" media="all">
+		<title>LWalden Code Projects</title>
 	</head>
+
 	<body>
-		<div class="header">
-			<h1>About me</h1>
-		</div>
-		<div class="main">
-			<h1>Meet the family</h1>
-			<div>
-				<h2>Cooper</strong></h2>
+		<div class="container clearfix">
+	
+			<div class="grid_12  menu">
+				<ul>
+					<li><a href="../index.html">Home</a></li>
+					<li><a href="https://github.com/lwalden/" target="-blank">My GitHub</a></li>
+					<li>About
+						<ul>
+							<li class="menuItem3 first">Project homepage for Laurance Walden. Laurance is learning to code.</li>
+							<li class="menuItem3">Learn more about me below.</li>
+							<li class="menuItem3 last"></li>
+						</ul>
+					</li>
+					<li><a href="mailto:lwalden77@gmail.com">Contact me</a></li>
+					<li></li>
+				</ul>
+			</div>
+			
+			<div class="grid_12 header">
+				<h1>About Me</h1>
+			</div>
+
+			<div class="grid_6">
+				<div class="subHeading">
+					<h2>Cooper</h2>
+				</div>
 				<img src="images/cooper.jpg">
-				<h3>Interests</h3>
-				<ul >
-					<li>Dinner</li>
-					<li>Squirrels, cats, and rabbits</li>
-					<li>Lap time</li>
-					<li>Dog park</li>
-				</ul>
+				<div class="squareSub"><h2>Interests</h2></div>
+				<table>
+						<tr><td>
+							<ul >
+							<li>Dinner</li>
+							<li>Squirrels, cats, and rabbits</li>
+							<li>Lap time</li>
+							<li>Dog park</li>
+						</ul>
+					</td></tr>
+				</table>
+				<div class="subFooter"></div>
 			</div>
-			<div>
-				<h2>Laurance and Dina Walden</h2>
+			<div class="grid_6 pushright omega">
+				<div class="subHeading">
+					<h2>Laurance and Dina Walden</h2>
+				</div>
 				<img src="images/lwanddw.jpg">
-				<p>Visting Pullman, WA Oct,2013 <em>-Go Cougs!</em>
-				<h3>Interests</h3>
-				<ul >
-					<li>Laurance:</li>
-					<ul>
-						<li>Learning Software and Web development</li>
-						<li>Rock Climbing</li>
-						<li>Euro-style board games</li>
-						<li>Portland Trail Blazers</li>
-					</ul>
-					<li>Dina:</li>
-					<ul>
-						<li>Wine</li>
-						<li>Non-Fiction</li>
-						<li>Architecture</li>
-						<li>Foo Fighers</li>
-					</ul>
-				</ul>
+				<div class="squareSub"><h2>Interests</h2></div>
+				<table>
+					<tr><td>
+						<ul >
+							<li>Laurance:</li>
+							<ul>
+								<li>Learning Software and Web development</li>
+								<li>Rock Climbing</li>
+								<li>Euro-style board games</li>
+								<li>Portland Trail Blazers</li>
+							</ul>
+							<li>Dina:</li>
+							<ul>
+								<li>Wine</li>
+								<li>Non-Fiction</li>
+								<li>Architecture</li>
+								<li>Foo Fighers</li>
+							</ul>
+						</ul>
+					</td></tr>
+				</table>
+				<div class="subFooter"></div>
 			</div>
+			<div class="grid_12 footer"></div>
 		</div>
-		<div class="footer1">
-			<a class="whitelink" href="index.html">Home</a>
-			<br>
-			<a class="whitelink" href="mailto:lwalden77@gmail.com">Contact me</a><br/>
-			Written in Sublime Text 2
-		</div>
-		<div class="footer2"></div>
 	</body>
 </html>
