@@ -6,7 +6,7 @@ body, html { /* set size of body to full page and remove margins */
     background-color: #FFFFFF;
 }
 
-.projects { /* avoid double border on table element, set width*/
+table { /* avoid double border on table element, set width*/
 border-collapse:collapse;
 width: 100%;
 }
@@ -21,7 +21,16 @@ vertical-align: middle;
 }
 
 td {
-	padding:0px;
+	padding:5px;
+}
+
+a,a:visited {
+	color:#2E9AFE;
+	text-decoration: none;
+	font-weight: 700;
+}
+.pushRight {
+	float: right;
 }
 
 .header{
@@ -34,18 +43,29 @@ td {
 	text-align: center;
 }
 
-.headerBar{
+.subHeading{
 	background-color: #000033;
 	width: 100%;
-	height: 50px;
+	height: 30px;
 	color: #FFFFFF;
 	text-align: center;
 	font-family: sans-serif;
 	border-radius: 25px 25px 0 0;
-	padding-top: 20px;
-	padding-bottom: 5px;
-	line-height: 30px;
+	padding-top: 0px;
+	padding-bottom: 0px;
 	margin-top: 20px;
+	margin-bottom: 1px;
+}
+
+.subFooter{
+	color: #000000;
+	border-radius: 0 0 25px 25px;
+	background-color: #000033;
+	width: 100%;
+	height: 30px;
+	float: left;
+	margin-bottom: 0px;
+	margin-top: 1px;
 }
 
 .footer{
@@ -135,10 +155,22 @@ a {
 	padding-bottom: 10px;
 }
 
-.instructions {
+.menuItem1 {
+	margin-left: 0px;
+}
+
+.menuItem2 {
+	margin-left: -200px
+}
+
+.menuItem3 {
 	margin-left: -400px;
 }
 
-.about {
+.menuItem4 {
 	margin-left: -600px;
+}
+
+.menuItem5 {
+	margin-left: -800px;
 }
