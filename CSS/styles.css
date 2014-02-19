@@ -12,7 +12,7 @@ width: 100%;
 }
 
 table,th, td {
-border: 4px solid #000048;
+border: 4px solid #16358E;
 vertical-align: middle;
 }
 
@@ -31,7 +31,7 @@ a,a:visited {
 }
 
 img {
-	border: 4px solid #000048;
+	border: 4px solid #16358E;
 	width: 98%;
 	width: calc(100% - 8px);
 	height:auto;
@@ -43,7 +43,7 @@ img {
 
 .header{
 	margin-top: -9px;
-	background-color: #000048;
+	background-color: #16358E;
 	border-radius: 0 0 25px 25px;
 	width: 100%;
 	height: 100px;
@@ -52,7 +52,7 @@ img {
 }
 
 .subHeading{
-	background-color: #000048;
+	background-color: #16358E;
 	width: 100%;
 	height: 30px;
 	color: #FFFFFF;
@@ -67,7 +67,7 @@ img {
 }
 
 .squareSub {
-	background-color: #000048;
+	background-color: #16358E;
 	height: 30px;
 	color: #FFFFFF;
 	text-align: center;
@@ -82,7 +82,7 @@ img {
 .subFooter{
 	color: #000000;
 	border-radius: 0 0 25px 25px;
-	background-color: #000048;
+	background-color: #16358E;
 	width: 100%;
 	height: 30px;
 	float: left;
@@ -93,7 +93,7 @@ img {
 .footer{
 	color: #000000;
 	border-radius: 25px 25px 0 0;
-	background-color: #000048;
+	background-color: #16358E;
 	width: 100%;
 	height: 30px;
 	float: left;
@@ -125,7 +125,7 @@ a {
 	position:relative;
 	float:left;
 	list-style:none;
-	background:#000048;
+	background:#16358E;
 }
 
 .menu ul ul{ /*sub menu elements*/
@@ -154,13 +154,13 @@ a {
 }
 
 .menu ul li:hover ul li a{
-	background:#000048;
+	background:#16358E;
 	z-index:1;
 	opacity:1;
 	text-decoration:none;
 }
 .menu ul li ul li { /*sub menu elements*/
-	background:#000048;
+	background:#16358E;
 	opacity:1;
 	width:985px;
 	height:30px;
