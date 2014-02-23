@@ -3,11 +3,11 @@ body, html { /* set size of body to full page and remove margins */
     height: 100%;
     padding: 0;
     margin: 0;
-    color: #16358E;
+    color: #000000;
 }
 
 a,a:visited {
-	color:#0101DF;
+	color: #167A38;
 	text-decoration: none;
 	font-weight: 700;
 	font-family: sans-serif;
@@ -39,7 +39,7 @@ img {
 	float: right;
 }
 
-.header{
+.header {
 	margin-top: -20px;
 	width: 100%;
 	height: 60px;
@@ -97,5 +97,4 @@ img {
 
 .list li span{
 	position: relative;
-	left: -30px;
 }
