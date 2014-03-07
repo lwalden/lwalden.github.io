@@ -1,0 +1,100 @@
+body, html { /* set size of body to full page and remove margins */
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    color: #000000;
+}
+
+a,a:visited {
+	color: #167A38;
+	text-decoration: none;
+	font-weight: 700;
+	font-family: sans-serif;
+}
+
+img {
+	border: solid 1px #16358E;
+}
+
+.fitGrid {
+		width: calc(100% - 1px);
+		height: auto;
+		margin-top: 10px;
+}
+
+.project {
+	margin-top: 60px;
+	float:left;
+	text-indent: 0;
+}
+
+.project h2 {
+	margin-bottom: 20px;
+
+}
+
+
+.pushRight {
+	float: right;
+}
+
+.header {
+	margin-top: -20px;
+	width: 100%;
+	height: 60px;
+	color: #16358E;
+	text-align: left;
+	text-indent: 25px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #16358E;
+}
+
+.sub {
+	height: 40px;
+	margin-top: 30px;
+	padding-bottom: 0px;
+	line-height: 40px;
+}
+
+.footer{
+	color: #000000;
+	background-color: #16358E;
+   height: 100px;
+   width: 100%;
+}
+
+.bar {
+	background-color: #16358E;
+	height: 30px;
+	color: #DFEEF1;
+}
+
+.bar a:visited {
+	color:white;
+}
+
+.menuItem {
+	padding: 5px;
+	list-style: none;
+}
+
+.menuItem li {
+	font-size: 14px;
+	float: left;
+	padding: 0 20px;
+	margin-top: -13px;
+}
+
+.menuItem li a,.menuItem li a:visited {
+	color: #DFEEF1;
+	text-decoration: none;
+}
+
+.menuItem li a:hover {
+	color: #FFFFFF;
+}
+
+.list li span{
+	position: relative;
+}

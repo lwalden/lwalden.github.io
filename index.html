@@ -1,96 +1,180 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="CSS/normalize.css" media="all">
-		<link rel="stylesheet" type="text/css" href="CSS/grid.css" media="all">
-		<link rel="stylesheet" type="text/css" href="CSS/styles.css" media="all">
-		<title>LWalden Code Projects</title>
-	</head>
+<html class="no-js" lang="en" >
 
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <title>LWalden Projects</title>
+
+	  <link rel="stylesheet" href="css/normalize.css">
+	  <link rel="stylesheet" href="css/foundation.css">
+	  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	  <link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="CSS/styles.css" media="all">
+	 	<script src="js/vendor/modernizr.js"></script>
+
+	</head>
 	<body>
-		<div class="clearfix container">
-			<div class="grid_12 header omega">
-				<h1>LWalden Projects</h1>
-			</div>
-			<div class="grid_12 bar omega">
-				<ul class="menuItem">
-					<li><a href="../index.html">Home</a></li>
-					<li><a href="https://github.com/lwalden/" target="-blank">My GitHub</a></li>
-					<li><a href="../../aboutme.html">About</a></li>
-					<li class="last"><a href="mailto:lwalden77@gmail.com">Contact me</a></li>
-				</ul>
-			</div>
-			<div class="grid_12 sub header omega">
-				<h2>Projects</h2>
-			</div>
-			<div class="grid_6">
-				<a href="flashcards/flashcards.html"><img src="images/flashcards.gif"></a>
-			</div>
-			<div class="grid_6 omega project">
-				<h2><a href="flashcards/flashcards.html">Code syntax flashcards</a></h2>
-				<p>Repo <a href="https://github.com/lwalden/flashcards">lwalden/flashcards</a></p>
-				<p>Practice your JavaScript, HTML, and CSS syntax</p>
-			</div>
-			<div class="grid_6">
-				<img src="images/poker.gif">
-			</div>
-			<div class="grid_6 omega project">
-				<h2>C# Console App: Poker hand evaluator</h2>
-				<p>Repo <a href="https://github.com/lwalden/Poker-hand-evaluator">lwalden/Poker-hand-evaluator</a></p>
-				<p>Draw up to seven cards, display hand, display ranking of the best 5 card (or less) hand possible</p>
-			</div>
-			<div class="grid_6">
-				<a href="treehouse/bacon-example-site/index.html"><img src="images/bakin.gif"></a>
-			</div>
-			<div class="grid_6 omega project">
-				<h2><a href="treehouse/bacon-example-site/index.html">Smells like Bakin' practice web page</a></h2>
-				<p>Repo <a href="https://github.com/lwalden/treehouse">lwalden/treehouse/bacon-example-site</a></p>
-				<p>Made while following along with lessons on treehouse. Learned about normalize and grid, practiced with margin and padding</p>
-			</div>
-			<div class="grid_6">
-				<img src="images/treebook.jpg">
-			</div>
-			<div class="grid_6 omega project">
-				<h2>Treebook - treehouse project</h2>
-				<p>Repo <a href="https://github.com/lwalden/treebook">lwalden/treebook</a></p>
-				<p>Made while following along with lessons on treehouse. Built in Ruby on Rails. Work in progress.</p>
-			</div>
-			<div class="grid_6">
-				<div class="sub header">
-					<h2>Here's what I'm studying right now</h2>
+		<!--top menu-->
+		<div class="fixed">
+  		<nav class="top-bar" data-topbar>
+    		<ul class="title-area">
+    			<li class="name">
+      			<h1><a href="#">LWalden Projects</a></h1>
+    			</li>
+    			<li class="toggle-topbar menu-icon">
+    				<a href="#">Menu</a>
+    			</li>
+  			</ul>
+  			<section class="top-bar-section">
+    			<!-- Right Nav Section -->
+    			<ul class="right">
+    				<li class="divider"></li>
+			      <li class="active"><a href="mailto:lwalden77@gmail.com">Contact me</a></li>
+			    </ul>
+		    	<!-- Left Nav Section -->
+		    	<ul class="left">
+		    		<li class="divider"></li>
+		    		<li class="has-dropdown">
+		        	<a href="#projects">Projects</a>
+		        	<ul class="dropdown">
+		         		<li><a href="#c-sharp">C#</a></li>
+		          	<li><a href="#ruby-on-rails">Ruby on Rails</a></li>
+		          	<li><a href="#html-css">HTML/CSS</a></li>
+		        	</ul>
+		      	</li>
+		      	<li class="divider"></li>
+		      	<li><a href="https://github.com/lwalden/" target="-blank">My GitHub</a></li>
+		    	</ul>
+		  	</section>
+		  </nav>
+		</div>
+		<!-- left sidebar -->
+		<div class="fixed left-sidebar text-center">
+				<h3>About</h3>
+				<div class="panel">
+					<p>Laurance Walden is an aspiring web developer.</p>
 				</div>
-				<ul class="list">
-					<li><span>HTML</span></li>
-					<li><span>CSS</span></li>
-					<li><span>Ruby on Rails</span></li>
-					<li><span>.Net / C#</span></li>
-					<li><span>Javascript</span></li>
-					<li><span>Tools and utilites like:</span></li>
-						<ul>
-							<li><span>Git Hub</span></li>
-							<li><span>Sublime Text 2</span></li>
-							<li><span>Visual Studio 2012 / 13</span></li></ul>
-						</ul>
+				<h5>Online Profiles</h5>
+				<ul class="text-left no-bullet">
+					<li><a href="https://www.linkedin.com/pub/laurance-walden/4/191/558/" target="_bank">linkedin</a></li>
+					<li><a href="http://www.codecademy.com/lwalden" target="_bank">codecademy</li>
+					<li><a href="https://www.teamtreehouse.com/laurancewalden" target="_bank">treehouse</li>
+					<li><a href="https://www.codeschool.com/users/lwalden" target="_bank">code school</a></li>
 				</ul>
-			</div>
-			<div class="grid_6 omega">
-				<div class="sub header">
-					<h2>Some of the resources I'm using</h2>
+				<div class="low panel">
+					<p>Thanks for visting. This page is always under contruction. Visit again to see what new tools I've learned and to check out new projects.</p>
 				</div>
-				<ul class="list">
-					<li><span><a href="http://www.teamtreehouse.com" target="_blank">Team Tree House</a></span></li>
-					<li><span><a href="http://www.codeacademy.com" target="_blank">Code Academy</a></span></li>
-					<li><span><a href="http://www.wrox.com" target="_blank">Beginning ASP.NET 4.5 in C# and VB</a></span></li>
-					<li><span><a href="http://www.youtube.com/user/kudvenkat" target="_blank">Pragim Technology C# video tutorials</a></span></li>
-					<li><span><a href="http://www.learnhowtoprogram.com" target="_blank">Learnhowtoprogram.com</a></span></li>
-					<li><span><a href="http://www.w3schools.com/" targer="_blank">w3schools</a></span></li>
-					<li><span><a href="http://www.stackoverflow.com" target="_blank">stackoverflow</a></span></li>
-					<li><span><a href="http://msdn.microsoft.com/" target="_blank">MSDN</a></span></li>
-					<li><span><a href="https://www.codeschool.com">Code school</a></span></li>
-				</ul>
+		</div>
+		<!--main content-->
+		<div class= "wrapper">
+			<div class="row">
+				<div class="small-11 section-head">
+					<h1 id="projects">Projects</h1>
+				</div>
 			</div>
-			<div class="grid_12 omega footer">
+			<div class="row">
+				<div class="small-11">
+					<dl class="outer accordion" data-accordion>
+					  <dd id="c-sharp">
+							<!--C# Projects-->
+							<a href="#projects-panel1">C#</a>
+							<div id="projects-panel1" class="content">
+								<dl class="tabs" data-tab>
+					        <dd class="active"><a href="#c-sharp-1">Poker Hand Evaluator</a></dd>
+					      </dl>
+					      <div class="tabs-content">
+					        <div class="content active" id="c-sharp--1">
+					          <ul class="small-block-grid-2">
+						  				<li><img src="images/poker.gif"></li>
+						  				<li>
+						  					<div class="panel">
+						  						<h5>Console App</h5>
+													<p>Draw up to seven cards, display hand, display ranking of the best 5 card (or less) hand possible</p>
+						  					</div>
+						  					<div class="panel">
+						  						<p>Repo <a href="https://github.com/lwalden/Poker-hand-evaluator">lwalden/Poker-hand-evaluator</a></p>
+						  					</div>
+						  				</li>
+										</ul>
+					        </div>
+					      </div>
+					    </div>
+					  </dd>
+					  <dd id="ruby-on-rails">
+					  <!--Ruby on Rails projects-->
+							<a href="#projects-panel2">Ruby on Rails</a>
+							<div id="projects-panel2" class="content">
+								<dl class="tabs" data-tab>
+					        <dd class="active"><a href="#ruby-on-rails-1">Treebook</a></dd>
+					      </dl>
+					      <div class="tabs-content">
+					        <div class="content active" id="ruby-on-rails-1">
+					          <ul class="small-block-grid-2">
+						  				<li><img src="images/treebook.jpg"></li>
+						  				<li>
+						  					<div class="panel">
+						  						<h5>Treehouse project</h5>
+													<p>Made while following along with lessons on treehouse. <em>Under construction.</em></p>
+						  					</div>
+						  					<div class="panel">
+						  						<p>Repo <a href="https://github.com/lwalden/treebook">lwalden/treebook</a></p>
+						  					</div>
+						  				</li>
+										</ul>
+					        </div>
+					      </div>
+					    </div>
+					  </dd>
+						<dd id="html-css">
+					  <!--HTML/CSS projects-->
+							<a href="#projects-panel3">HTML/CSS</a>
+							<div id="projects-panel3" class="content">
+								<dl class="tabs" data-tab>
+					        <dd class="active"><a href="#html-css-1">Code Flashcards</a></dd>
+					        <dd><a href="#html-css-2">Smells Like Bakin'</a></dd>
+					      </dl>
+					      <div class="tabs-content">
+					        <div class="content active" id="html-css-1">
+					          <ul class="small-block-grid-2">
+						  				<li><img src="images/flashcards.gif"></li>
+						  				<li>
+						  					<div class="panel">
+						  						<h5>Simple jquery flashcard page</h5>
+													<p>Practice your JavaScript, HTML, and CSS syntax.</p>
+						  					</div>
+						  					<div class="panel">
+						  						<p>Repo <a href="https://github.com/lwalden/flashcards">lwalden/flashcards</a></p>
+						  					</div>
+						  				</li>
+										</ul>
+					        </div>
+					        <div class="content" id="html-css-2">
+					          <ul class="small-block-grid-2">
+						  				<li><img src="images/bakin.gif"></li>
+						  				<li>
+						  					<div class="panel">
+						  						<h5>Treehouse project</h5>
+													<p>Made while following along with lessons on treehouse. Example use of normalize and grid.</p>
+						  					</div>
+						  					<div class="panel">
+						  						<p>Repo <a href="https://github.com/lwalden/treehouse">lwalden/treehouse/bacon-example-site</a></p>
+						  					</div>
+						  				</li>
+										</ul>
+					        </div>
+					      </div>
+					    </div>
+					  </dd>
+					</dl>
+				</div>
 			</div>
 		</div>
+		<div class=button id="return-to-top">
+			<a href="#"><i class="fa fa-chevron-up"></i></a>
+		</div>
+		<script src="js/vendor/jquery.js"></script>
+	  <script src="js/foundation.min.js"></script>
+	  <script>$(document).foundation();</script>
 	</body>
 </html>
