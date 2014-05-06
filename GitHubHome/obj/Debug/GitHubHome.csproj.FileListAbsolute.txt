@@ -1,6 +1,0 @@
-C:\Users\lwald_000\Documents\Visual Studio 2013\Projects\GitHubHome\GitHubHome\bin\GitHubHome.dll.config
-C:\Users\lwald_000\Documents\Visual Studio 2013\Projects\GitHubHome\GitHubHome\bin\GitHubHome.dll
-C:\Users\lwald_000\Documents\Visual Studio 2013\Projects\GitHubHome\GitHubHome\bin\GitHubHome.pdb
-C:\Users\lwald_000\Documents\Visual Studio 2013\Projects\GitHubHome\GitHubHome\obj\Debug\GitHubHome.csprojResolveAssemblyReference.cache
-C:\Users\lwald_000\Documents\Visual Studio 2013\Projects\GitHubHome\GitHubHome\obj\Debug\GitHubHome.dll
-C:\Users\lwald_000\Documents\Visual Studio 2013\Projects\GitHubHome\GitHubHome\obj\Debug\GitHubHome.pdb
