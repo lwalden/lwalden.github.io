@@ -5,9 +5,9 @@
 	  <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  <title>LWalden Projects</title>
-        <link href="/Content/bootstrap.min.css" rel="stylesheet" />
-        <link href="/Content/font-awesome.min.css" rel="stylesheet" />
-        <link href="/Content/styles.css" rel="stylesheet" />
+        <link href="Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="Content/font-awesome.min.css" rel="stylesheet" />
+        <link href="Content/_styles.css" rel="stylesheet" />
 	</head>
 	<body>
         <nav class="navbar navbar-inverse" role="navigation">
@@ -19,14 +19,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">LWalden</a>
+                    <a class="navbar-brand" href="#">lwalden.github.io</a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Portfolio Home</a></li>
                         <li><a href="https://github.com/lwalden" target="_blank">GitHub Repos</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">On the Web<b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">LW On the Web<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="http://www.linkedin.com/pub/laurance-walden/4/191/558/" target="_blank">LinkedIn</a></li>
                                 <li><a href="https://coderbits.com/lwalden" target="_blank">Coderbits</a></li>
@@ -34,7 +33,7 @@
                                 <li><a href="http://www.teamtreehouse.com/laurancewalden" target="_blank">Team Treehouse</a></li>
                                 <li><a href="https://www.codeschool.com/users/lwalden" target="_blank">Code School</a></li>
                                 <li><a href="http://stackoverflow.com/users/2951037/lwalden" target="_blank">Stackoverflow</a></li>
-                                <li><a href="http://www.codecademy.com/lwalden" target="_blank">Codecademy</a></li>                              
+                                <li><a href="http://www.codecademy.com/lwalden" target="_blank">Codecademy</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -45,17 +44,65 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <div class="container-fluid clearfix">
+        <div class="container clearfix">
             <div class="row">
-                <div class="jumbotron">
-               		<p>This page is undergoing a facelift, new content ETA 5/11/14.</p>
-                    <p>All links above are active, please use them for now to learn more about me.</p>
-                    <p>Check out my code in my <a href="https://github.com/lwalden/TheArtMuseum" target="_blank">TheArtMuseum</a> Repo for a good example of my recent work.</p>
+                <div class="col-sm-2">
+                    <div id="bio" class="well">
+                        <img src="../images/LL_in_the_sun.jpg" class="profile-img" />
+                        <h4>Laurance Walden</h4>
+                        <h5>Full Stack Web Developer</h5>
+                        <hr />
+                        <p class="tab-content">"I can't wait to see what I don't know tomorrow."</p>
+                        <hr />
+                        <p>My passions are dis&shy;covery, problem-solving, and tech&shy;nology. This has led me to take a giant leap; leave behind my
+                            previous career, and begin anew as a dev&shy;eloper.</p>
+                        <p>It's one of the best decisions I've ever made.</p>
+                    </div>
                 </div>
-            </div>
+                <div class="col-sm-offset-1 col-sm-5">
+                    <div id="skills" class="well">
+                        <img src="images/icons/1399776621_HTML5.png" data-toggle="tooltip" data-placement="auto" title="HTML5" />
+                        <img src="images/icons/1399776638_CSS3.png" data-toggle="tooltip" data-placement="auto" title="CSS3" />
+                        <img src="images/icons/1399776671_js.png" data-toggle="tooltip" data-placement="auto" title="JavaScript" />
+                        <img src="images/icons/Angular.png" data-toggle="tooltip" data-placement="auto" title="Angular" />
+                        <img src="images/icons/jquery-logo-150x150.jpg" data-toggle="tooltip" data-placement="auto" title="jQuery" />
+                        <img src="images/icons/csharp.png" data-toggle="tooltip" data-placement="auto" title="C#" />
+                        <img src="images/icons/MSNET.jpg" data-toggle="tooltip" data-placement="auto" title=".Net framework" />
+                        <img src="images/icons/SQL.png" data-toggle="tooltip" data-placement="auto" title="SQL" />
+                        <img src="images/icons/github.png" data-toggle="tooltip" data-placement="auto" title="GitHub" />
+                        <div class="btn-sm btn-info">Visual Studio</div>
+                        <div class="btn-sm btn-info">Command Line</div>
+                        <div class="btn-sm btn-info">Razor</div>
+                        <div class="btn-sm btn-info">MVC 5</div>
+                        <div class="btn-sm btn-info">Bootstrap</div>
+                        <div class="btn-sm btn-info">Foundation</div>
+                        <div class="btn-sm btn-info">Firebase</div>
+                        <div class="btn-sm btn-info">Entity Framework</div>
+                        <div class="btn-sm btn-info">LinQ</div>
+                        <div class="btn-sm btn-info">Debugging</div>
+                        <div class="btn-sm btn-info">Team Foundation Server</div>
+                        <div class="btn-sm btn-info">Web API</div>
+                    </div>
+                    <div class="portfolio well">
+                        <h3>The Art Museum</h3>
+                        <p>
+                            This is a .Net MVC5 App written in C#. It utilizes a code-first approach to perform full CRUD
+                            opperations on a SQL database using Entity Framework / LinQ queries. Includes Authentication and Authorization
+                            with multiple logins and user roles; also inclides search functionality.  All images are public domain.
+                        </p>
+                        <a href="https://github.com/lwalden/TheArtMuseum">The Art Museum GitHub Repo</a>
+                        <img src="images/portfolio/artmuseum.png" />
+                    </div>
+                </div>
+                <div class="col-sm-offset-1 col-sm-3">
+                    <div class="well">
+                        <script type="text/javascript" src="http://output39.rssinclude.com/output?type=js&amp;id=876464&amp;hash=da3f2fbbaf290851b2973528aa01f98a"></script>
+                    </div>
+                </div>
+            </div>    
         </div>
-        <script src="/Scripts/jquery-1.9.1.min.js"></script>
-        <script src="/Scripts/bootstrap.js"></script>
-        <script src="/Scripts/main.js"></script>
+        <script src="Scripts/jquery-1.9.1.min.js"></script>
+        <script src="Scripts/bootstrap.js"></script>
+        <script src="Scripts/_main.js"></script>
 	</body>
 </html>
