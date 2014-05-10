@@ -1,0 +1,45 @@
+body {
+	background: url(../images/gradient-background.jpg);
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.rssincl-title {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.portfolio img {
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+}
+
+#bio h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    }
+
+#bio p {
+    text-indent: 1em;
+    hyphens: auto
+}
+#rssincl-box-876464::before {
+    font-size: 1.25em;
+    font-weight: bold;
+    content: "My latest blog post:"
+}
+
+#skills img {
+    width: 40px;
+    height: auto;
+}
+
+#skills div {
+    margin: 0.2em;
+    display: inline-block;
+}
