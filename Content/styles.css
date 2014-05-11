@@ -1,5 +1,18 @@
 body {
 	background: url(../images/gradient-background.jpg);
+    background-attachment:fixed;   
+}
+
+nav {
+    font-size: 1.25em;
+}
+
+.navbar-brand {
+    font-size: 1.3em;
+}
+
+.vert-space-70 {
+    margin-top: 70px;
 }
 
 .profile-img {
@@ -34,9 +47,15 @@ body {
     content: "My latest blog post:"
 }
 
+#skills {
+    text-align: center;
+}
+
 #skills img {
-    width: 40px;
+    justify-content: center;
+    width: 50px;
     height: auto;
+    margin: 0.2em;
 }
 
 #skills div {
