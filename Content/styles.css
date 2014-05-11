@@ -2,7 +2,7 @@ body {
 	background: url(../images/City-Lights-Theme-HD.jpg);
     background-attachment:fixed;
     background-size: cover;
-    background-position-y: top 200px;   
+    background-position: 0 -200px;   
 }
 
 nav {
