@@ -1,5 +1,5 @@
 body {
-	background: url(../images/City-Lights-Theme-HD.jpg);
+    background: url(../images/City-Lights-Theme-HD.jpg);
     background-attachment:fixed;
     background-size: cover;
     background-position: 0 -200px;   
@@ -53,7 +53,7 @@ nav {
 }
 
 .foot a:hover {
-	color: white;
+    color: white;
 }
 
 #bio h1, h2, h3, h4, h5, h6 {
