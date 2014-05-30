@@ -86,3 +86,8 @@ nav {
     margin: 0.2em;
     display: inline-block;
 }
+
+#blog img {
+    width: 98%;
+    height: auto;
+}
