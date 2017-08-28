@@ -4,6 +4,7 @@ body {
     background-size: cover;
     background-repeat:no-repeat;
     background-position:center bottom;
+	overflow-x: hidden;
 }
 
 nav {
@@ -24,74 +25,24 @@ nav {
 }
 
 .profile-img {
-    width: 100%;
+    width: 90%;
     max-width: 300px;
     height: auto;
     border-radius: 50%;
 }
 
-.rssincl-title {
-    font-size: 1.25em;
-    font-weight: bold;
-}
-
-.portfolio img {
-    width: 100%;
-    height: auto;
-    border: 1px solid black;
-}
-
-.foot {
-    font-size: 1.5em;
-    color: white;
-    background-color: #222;
-    border: 1px solid black;
-}
-
-.foot a {
-    text-decoration: none;
-    color: #999;
-}
-
-.foot a:hover {
-    color: white;
-}
-
-.carousel-caption {
-    color: black;
-}
-
-#bio h1, h2, h3, h4, h5, h6 {
-    text-align: center;
-    }
-
-#bio p {
-    text-indent: 1em;
-    hyphens: auto
-}
-#rssincl-box-876464::before {
-    font-size: 1.25em;
-    font-weight: bold;
-    content: "My latest blog post:"
-}
-
-#skills {
+.skills {
     text-align: center;
 }
 
-#skills img {
+.skills img {
     justify-content: center;
     width: 50px;
     height: auto;
     margin: 0.2em;
 }
 
-#skills div {
+.skills div {
     margin: 0.2em;
     display: inline-block;
-}
-
-#blog img {
-    width: 98%;
-    height: auto;
 }
