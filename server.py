@@ -5,7 +5,7 @@ import SimpleHTTPServer
 import SocketServer
 
 #yeah it's a global variable wanna fight about it?
-HEADERS = [{"Feature-Policy": "midi *; microphone *; fullscreen *; encrypted-media *; document-domain *; display-capture *; camera *"}]
+HEADERS = [{"Feature-Policy": "camera *"}]
 
 class CustomHeadersRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
     """A request handler that includes custom HTTP response headers."""
