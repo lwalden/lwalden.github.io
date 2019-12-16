@@ -1,13 +1,505 @@
-﻿<!DOCTYPE html>
-<html class="no-js" lang="en">
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="child-src *">
-    <title>LWalden Projects v10</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>MiSnap 4.2.0 - Mitek Systems Integration Example</title>
+  <meta name="description" content="Mitek Systems Mobile Web Demo">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 </head>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: arial;
+    color: #777;
+  }
+
+  #uiContainer {
+    margin: 20px;
+  }
+
+  #uiContainer select {
+    margin-bottom: 15px;
+    width: 260px;
+  }
+
+  ul {
+    list-style: none;
+    text-align: left;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  div.integrator {
+    border: 0px;
+  }
+
+  @media (orientation: portrait) {
+    .integrator.DL_FRONT {
+      background: url('images/ghost_dlfront_portrait.png') no-repeat;
+    }
+
+    .integrator.PDF417_BARCODE {
+      background: url('images/ghost_barcode_portrait.png') no-repeat;
+    }
+
+    .integrator.PASSPORT {
+      background: url('images/ghost_passport_portrait.png') no-repeat;
+    }
+
+    .integrator.SELFIE {
+      background: url('images/ghost_selfie_portrait.gif') no-repeat;
+    }
+
+    .integrator.SELFIE.FACE_IN_GUIDE {
+      background: url('images/ghost_selfie_portrait_green.gif') no-repeat;
+    }
+
+  }
+
+  @media (orientation: landscape) {
+    .integrator.DL_FRONT {
+      background: url('images/ghost_dlfront.png') no-repeat;
+    }
+
+    .integrator.PDF417_BARCODE {
+      background: url('images/ghost_barcode.png') no-repeat;
+    }
+
+    .integrator.PASSPORT {
+      background: url('images/ghost_passport.png') no-repeat;
+    }
+
+    .integrator.SELFIE {
+      background: url('images/ghost_selfie.gif') no-repeat;
+    }
+
+    .integrator.SELFIE.FACE_IN_GUIDE {
+      background: url('images/ghost_selfie_green.gif') no-repeat;
+    }
+  }
+
+  #misnapError {
+    margin-top: 15px;
+    font-size: 14pt;
+    font-family: arial;
+    color: red;
+  }
+
+  #capturedImage {
+    width: 80%;
+    height: auto;
+  }
+
+  #integratorCaptureSelection {
+    padding: 4px;
+  }
+
+  .loader-wrap {
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    top: 50%;
+    left: 50%;
+    margin-left: -60px;
+    margin-top: -60px;
+    display: none;
+  }
+
+  .loader {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    border-bottom: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  h2 {
+    color: #555;
+    margin-bottom: 15px;
+  }
+
+  h4 {
+    margin-top: 15px;
+  }
+</style>
+
 <body>
-    <iframe allowusermedia="true" src="https://lwm-mystique-webui.azurewebsites.net/d3bjfh1JW0GxPCkImJweyA" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" frameborder="0" allowfullscreen height="100%" width="100%" allow="ambient-light-sensor; midi; microphone; fullscreen; encrypted-media; camera; gyroscope; picture-in-picture;"></iframe>
-</body>
+  <div id="uiContainer">
+
+    <h1>MiSnap Web - Example</h1>
+
+    <h2>Auto/Manual Capture</h2>
+
+    <select name="" id="integratorCaptureSelection">
+      <option value="DL_FRONT">DL FRONT</option>
+      <option value="PDF417_BARCODE">BARCODE</option>
+      <option value="PASSPORT">PASSPORT</option>
+      <option value="SELFIE">SELFIE</option>
+    </select>
+    <br />
+    <button id="integratorCapture" type="button" disabled="disabled">Manual Capture</button>&nbsp;
+    &nbsp;
+    <button id="integratorAutoCapture" type="button" disabled="disabled">Auto Capture</button>
+    <br />
+
+    <hr />
+    <h2>Direct Science Calls</h2>
+    <select name="" id="integratorDirectAPISelection">
+      <option value="DL_FRONT">DL FRONT</option>
+      <option value="PDF417_BARCODE">BARCODE</option>
+      <option value="PASSPORT">PASSPORT</option>
+      <option value="SELFIE">SELFIE</option>
+    </select>
+
+    <!-- Direct Science calls -->
+    <!-- FileInput type -->
+    <h4>Direct Science: FileInput</h4>
+    <input type="file" capture="camera" accept="image/*" id="directScience_fileInput" onchange="directScience_fileInput_call()" />
+
+    <!-- DataURL type -->
+    <h4>Direct Science: DataURL</h4>
+    <button onclick="directScience_dataurl_call()" disabled="disabled">Test</button>
+
+    <!-- ImageData type -->
+    <h4>Direct Science: ImageData</h4>
+    <button onclick="directScience_imagedata_call()" disabled="disabled">Test</button>
+
+
+    <hr />
+
+    <h2 style="margin-top: 10px; margin-bottom: 0px;">Capture Result</h2>
+    <h3 id="misnapError"></h3>
+    <img id="capturedImage">
+    <canvas id="testCanvas"></canvas>
+    <div class="loader-wrap" id="main-spinner">
+      <div class="loader"></div>
+    </div>
+  </div>
+
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+      $('button').attr('disabled', true);
+
+      var timer;
+      var hintTimer;
+      var recentHint = null;
+
+      var docTypeHints = {
+        MISNAP_HEAD_OUTSIDE: 'Place Face in Oval',
+        MISNAP_HEAD_SKEWED: 'Look Straight Ahead',
+        MISNAP_AXIS_ANGLE: 'Hold Phone Upright',
+        MISNAP_HEAD_TOO_CLOSE: 'Move Farther Away',
+        MISNAP_HEAD_TOO_FAR: 'Get Closer',
+        MISNAP_STAY_STILL: 'Hold Still',
+        MISNAP_SUCCESS: 'Success',
+        MISNAP_STOP_SMILING: 'Stop Smiling',
+        MISNAP_SMILE: 'Smile!',
+        MISNAP_READY_POSE: 'Hold it There',
+        NO_FACE_FOUND: 'No Face Detected',
+        MITEK_ERROR_GLARE: 'Reduce Glare',
+        MITEK_ERROR_FOUR_CORNER: 'Document Not Found'
+      };
+
+      var integratorCaptureInput = document.getElementById('integratorCapture');
+      var integratorCaptureSelection = document.getElementById('integratorCaptureSelection');
+      var integratorDirectAPISelection = document.getElementById('integratorDirectAPISelection');
+      var integratorAutoCaptureSelection = document.getElementById('integratorAutoCapture');
+      var spinner = document.getElementById('main-spinner');
+
+      function toggleSpinner(style) {
+        spinner.style.display = String(style);
+      }
+
+      integratorCaptureInput.onclick = function (e) {
+
+        mitekScienceSDK.cmd('CAPTURE_AND_PROCESS_FRAME', {
+          mode: 'MANUAL_CAPTURE',
+          documentType: integratorCaptureSelection.value,
+          mitekSDKPath: "./mitekSDK/",
+          options: {
+            qualityPercent: 80
+          }
+        });
+
+        mitekScienceSDK.on('FRAME_PROCESSING_FEEDBACK', function (result) {
+          showError(result);
+        });
+
+        mitekScienceSDK.on('FRAME_CAPTURE_RESULT', function (result) {
+          console.log("Manual capture result", result);
+          showCapturedImage(result);
+        });
+        mitekScienceSDK.on('SDK_ERROR', function (err) {
+          console.log('manual capture error', err);
+        });
+
+      };
+
+        integratorAutoCaptureSelection.onclick = function (e) {
+
+        // may be needed to address new browser standards (explicit video play)
+        document.querySelector('div video[autoplay="true"]').play();
+
+        var self = e.target;
+        self.setAttribute('disabled', 'disabled');
+        toggleSpinner('block');
+        recentHint = null;
+        let attemptTimer = null;
+
+
+        // camera started
+        mitekScienceSDK.on('CAMERA_DISPLAY_STARTED', function (result) {
+
+          if (integratorCaptureSelection.value === 'SELFIE') {
+            mitekScienceSDK.cmd('SHOW_HINT', 'Please wait...');
+          } else {
+            mitekScienceSDK.cmd('SHOW_HINT', 'Fill Guide Window');
+
+            timer = setTimeout(function () {
+              mitekScienceSDK.cmd('HIDE_HINT');
+            }, 3000);
+          }
+
+        });
+
+        mitekScienceSDK.on('FRAME_PROCESSING_FEEDBACK', function (result) {
+
+          recentHint = result.key;
+
+          if (integratorCaptureSelection.value === 'SELFIE') {
+
+            // turn oval green if head is in guide
+            if (result.key === 'MISNAP_SMILE' ||
+              result.key === 'MISNAP_STOP_SMILING' ||
+              result.key === 'MISNAP_READY_POSE') {
+              $('.integrator.SELFIE').addClass('FACE_IN_GUIDE');
+            } else {
+              $('.integrator.SELFIE').removeClass('FACE_IN_GUIDE');
+            }
+            if (recentHint !== null) {
+              mitekScienceSDK.cmd('SHOW_HINT', docTypeHints[recentHint]);
+            }
+          } else {
+
+            if (recentHint !== null) {
+              if (result.key == 'MITEK_ERROR_FOUR_CORNER' ||
+                result.key == 'MITEK_ERROR_GLARE') {
+                mitekScienceSDK.cmd('SHOW_HINT', docTypeHints[recentHint]);
+              } else {
+                recentHint = null;
+              }
+            }
+          }
+        });
+
+
+        mitekScienceSDK.on('FRAME_PROCESSING_STARTED', function (result) {
+          toggleSpinner('none');
+
+          console.log('started capture>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
+          attemptTimer = setTimeout(function () {
+            console.log('timeout');
+            clearTimeout(attemptTimer);
+            mitekScienceSDK.cmd('SDK_STOP');
+            self.removeAttribute('disabled');
+
+          }, 25000);
+
+          hintTimer = setInterval(function () {
+            if (recentHint !== null) {
+              mitekScienceSDK.cmd('SHOW_HINT', docTypeHints[recentHint]);
+            }
+          }, 500);
+        });
+
+        mitekScienceSDK.on('FRAME_CAPTURE_RESULT', function (result) {
+          console.log('captured', result);
+
+          clearTimeout(timer);
+          clearTimeout(hintTimer);
+          clearTimeout(attemptTimer);
+
+          showCapturedImage(result);
+          self.removeAttribute('disabled');
+        });
+
+        mitekScienceSDK.on('SDK_ERROR', function (err) {
+          toggleSpinner('none');
+          self.removeAttribute('disabled');
+
+          clearTimeout(timer);
+          clearTimeout(hintTimer);
+          console.log('auto capture error', err);
+        });
+
+        mitekScienceSDK.cmd('CAPTURE_AND_PROCESS_FRAME', {
+          mode: 'AUTO_CAPTURE',
+          documentType: integratorCaptureSelection.value,
+          mitekSDKPath: "./mitekSDK/",
+          options: {
+            qualityPercent: 80,
+          }
+        });
+      };
+
+
+      // enable all the buttons
+      $(':button').attr('disabled', false);
+      $('#directScience_fileInput').removeAttr('disabled');
+
+    });
+    // };
+
+    var documentTypeSelection = document.getElementById('integratorDirectAPISelection');
+
+    function getImageData(imagePath, imageType) {
+
+      var img = new Image();
+      var imageCanvas = document.createElement('canvas');
+      var imageCanvasContext = imageCanvas.getContext('2d');
+
+      return new Promise(function (resolve, reject) {
+
+        img.onload = function () {
+          imageCanvas.width = img.width;
+          imageCanvas.height = img.height;
+          imageCanvasContext.drawImage(img, 0, 0, imageCanvas.width, imageCanvas.height);
+
+          if (imageType === 'data_url') {
+            resolve(imageCanvas.toDataURL('image/jpeg', 0.8));
+          } else {
+            resolve(imageCanvasContext.getImageData(0, 0, imageCanvas.width, imageCanvas.height));
+          }
+        };
+
+        img.src = imagePath;
+      });
+    }
+
+    function directScience_fileInput_call() {
+
+      var fileInput = document.querySelector('#directScience_fileInput');
+      var fileData = fileInput.files[0];
+
+      mitekScienceSDK.on('FRAME_PROCESSING_FEEDBACK', function (result) {
+        showError(result);
+      });
+      mitekScienceSDK.cmd('PROCESS_FRAME', {
+        documentType: documentTypeSelection.value,
+        mitekSDKPath: "./mitekSDK/",
+        options: {
+          sourceType: 'file_input',
+          frame: fileData,
+          qualityPercent: 80
+        }
+      });
+
+      mitekScienceSDK.on('FRAME_CAPTURE_RESULT', function (result) {
+        console.log("Direct Science Result", result);
+        showCapturedImage(result);
+      });
+      mitekScienceSDK.on('SDK_ERROR', function (err) {
+        console.log('direct input error', err);
+
+      });
+
+    };
+
+    function showError(result) {
+      document.querySelector('#misnapError').innerHTML = '';
+      setTimeout(function () {
+        document.querySelector('#misnapError').innerHTML = result.key;
+      }, 1000);
+    }
+
+    function showCapturedImage(result) {
+      document.querySelector('#misnapError').innerHTML = "";
+      document.querySelector('#capturedImage').src = result.response.imageData;
+    }
+
+    function directScience_dataurl_call() {
+
+      getImageData('images/test_us_license_front.jpg', 'data_url').then(function (dataURL) {
+        mitekScienceSDK.cmd('PROCESS_FRAME', {
+          documentType: documentTypeSelection.value,
+          mitekSDKPath: "./mitekSDK/",
+          options: {
+            sourceType: 'data_url',
+            frame: dataURL,
+            qualityPercent: 80
+          }
+        });
+      });
+
+      mitekScienceSDK.on('FRAME_PROCESSING_FEEDBACK', function (result) {
+        showError(result);
+      });
+
+      mitekScienceSDK.on('FRAME_CAPTURE_RESULT', function (result) {
+        console.log("Direct Science Result", result);
+        showCapturedImage(result);
+      });
+      mitekScienceSDK.on('SDK_ERROR', function (err) {
+        console.log('data url input error', err);
+      });
+
+    };
+
+    function directScience_imagedata_call() {
+
+      getImageData('images/test_us_license_front.jpg', 'image_data').then(function (imageData) {
+        mitekScienceSDK.cmd('PROCESS_FRAME', {
+          documentType: documentTypeSelection.value,
+          mitekSDKPath: "./mitekSDK/",
+          options: {
+            sourceType: 'image_data',
+            frame: imageData,
+            qualityPercent: 80
+          }
+        });
+      });
+
+      mitekScienceSDK.on('FRAME_PROCESSING_FEEDBACK', function (result) {
+        showError(result);
+      });
+
+      mitekScienceSDK.on('FRAME_CAPTURE_RESULT', function (result) {
+        console.log("Direct Science Result", result);
+        showCapturedImage(result);
+      });
+      mitekScienceSDK.on('SDK_ERROR', function (err) {
+        console.log('image data input error', err);
+      });
+    };
+
+  </script>
+
+<script type="text/javascript" src="mitekSDK/../mitek-science-sdk.js"></script></body>
+
 </html>
