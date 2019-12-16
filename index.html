@@ -264,7 +264,9 @@
         integratorAutoCaptureSelection.onclick = function (e) {
 
         // may be needed to address new browser standards (explicit video play)
-        document.querySelector('div video[autoplay="true"]').play();
+        var mediaElement = document.querySelector('div video[autoplay="true"]');
+          if (mediaElement !== null)
+          {mediaElement.play();}
 
         var self = e.target;
         self.setAttribute('disabled', 'disabled');
