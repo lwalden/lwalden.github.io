@@ -286,8 +286,10 @@
 
             integratorAutoCaptureSelection.onclick = function (e) {
 
-                // may be needed to address new browser standards (explicit video play)
-                document.querySelector('div video[autoplay="true"]').play();
+        // may be needed to address new browser standards (explicit video play)
+        var mediaElement = document.querySelector('div video[autoplay="true"]');
+          if (mediaElement !== null)
+          {mediaElement.play();}
 
                 var self = e.target;
                 self.setAttribute('disabled', 'disabled');
@@ -523,7 +525,6 @@
 
     </script>
 
-    <script type="text/javascript" src="mitekSDK/../mitek-science-sdk.js"></script>
-</body>
+<script type="text/javascript" src="./mitekSDK/mitek-science-sdk.js"></script></body>
 
 </html>
