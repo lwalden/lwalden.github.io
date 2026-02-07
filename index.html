@@ -80,7 +80,7 @@
         <section id="about" class="fade-in">
             <h2>About Me</h2>
             <p>
-                I'm a .NET backend engineer with 11 years of experience designing and building scalable systems in Microsoft Azure. I thrive on solving complex problems—whether that means architecting resilient integrations, debugging tricky production issues, or optimizing workflows for dramatic performance gains.
+                I'm a .NET backend engineer with 12 years of experience designing and building scalable systems in Microsoft Azure. I thrive on solving complex problems—whether that means architecting resilient integrations, debugging tricky production issues, or optimizing workflows for dramatic performance gains.
             </p>
             <ul class="about-list">
                 <li><strong>Architecture & Design:</strong> Event-driven microservices, APIs, and system integrations</li>
@@ -95,6 +95,16 @@
             <h2>Tech Stack / Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
+                    <h3>AI & Agentic</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Claude Code</span>
+                        <span class="skill-tag">GitHub Copilot</span>
+                        <span class="skill-tag">Context Engineering</span>
+                        <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">Agent Orchestration</span>
+                    </div>
+                </div>
+                <div class="skill-category">
                     <h3>Languages</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">C#</span>
@@ -102,6 +112,24 @@
                         <span class="skill-tag">TypeScript</span>
                         <span class="skill-tag">SQL</span>
                         <span class="skill-tag">PowerShell</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub Actions</span>
+                        <span class="skill-tag">Azure DevOps</span>
+                        <span class="skill-tag">Docker</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Database</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MS SQL</span>
+                        <span class="skill-tag">CosmosDB</span>
+                        <span class="skill-tag">RavenDB</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -140,34 +168,6 @@
                         <span class="skill-tag">HTML</span>
                         <span class="skill-tag">CSS / SASS</span>
                         <span class="skill-tag">Webpack</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Database</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MS SQL</span>
-                        <span class="skill-tag">CosmosDB</span>
-                        <span class="skill-tag">RavenDB</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>AI & Agentic</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Claude Code</span>
-                        <span class="skill-tag">GitHub Copilot</span>
-                        <span class="skill-tag">Context Engineering</span>
-                        <span class="skill-tag">Prompt Engineering</span>
-                        <span class="skill-tag">Agent Orchestration</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>DevOps & Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">CI/CD</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitHub Actions</span>
-                        <span class="skill-tag">Azure DevOps</span>
-                        <span class="skill-tag">Docker</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -217,7 +217,7 @@
             <div class="writing-grid">
                 <article class="writing-card">
                     <div class="writing-embed">
-                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7426023758370578432?collapsed=1" height="564" width="504" frameborder="0" allowfullscreen="" title="Embedded post" loading="lazy"></iframe>
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7426023758370578432?collapsed=1" height="564" width="504" allowfullscreen title="Embedded post" loading="lazy"></iframe>
                     </div>
                 </article>
             </div>
@@ -247,14 +247,26 @@
                     <span>Resume</span>
                 </a>
             </div>
-            <p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Laurance Walden</p>
+            <p class="copyright">&copy; <span id="year"></span> Laurance Walden</p>
         </section>
     </main>
 
     <script>
+        // Copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Dynamic header offset
+        function updateHeaderOffset() {
+            const header = document.querySelector('header');
+            document.querySelector('main').style.paddingTop = header.offsetHeight + 'px';
+        }
+        updateHeaderOffset();
+        window.addEventListener('resize', updateHeaderOffset);
+
         // Scroll spy for nav active states
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('nav a');
+        let scrollTicking = false;
 
         function updateActiveNav() {
             const scrollPos = window.scrollY + 100;
@@ -269,23 +281,32 @@
                 return;
             }
 
-            sections.forEach(section => {
+            let activeId = null;
+            for (const section of sections) {
                 const top = section.offsetTop;
                 const height = section.offsetHeight;
-                const id = section.getAttribute('id');
-
                 if (scrollPos >= top && scrollPos < top + height) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === '#' + id) {
-                            link.classList.add('active');
-                        }
-                    });
+                    activeId = section.getAttribute('id');
+                    break;
                 }
-            });
+            }
+
+            if (activeId) {
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === '#' + activeId);
+                });
+            }
         }
 
-        window.addEventListener('scroll', updateActiveNav);
+        window.addEventListener('scroll', () => {
+            if (!scrollTicking) {
+                requestAnimationFrame(() => {
+                    updateActiveNav();
+                    scrollTicking = false;
+                });
+                scrollTicking = true;
+            }
+        });
         updateActiveNav();
 
         // Dark mode toggle
