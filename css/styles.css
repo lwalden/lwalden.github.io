@@ -116,6 +116,7 @@ section {
     padding: 2.5rem 2rem;
     max-width: 900px;
     margin: 0 auto;
+    scroll-margin-top: var(--header-height, 60px);
 }
 
 /* Hero section */

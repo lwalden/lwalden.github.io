@@ -258,7 +258,9 @@
         // Dynamic header offset
         function updateHeaderOffset() {
             const header = document.querySelector('header');
-            document.querySelector('main').style.paddingTop = header.offsetHeight + 'px';
+            const height = header.offsetHeight + 'px';
+            document.querySelector('main').style.paddingTop = height;
+            document.documentElement.style.setProperty('--header-height', height);
         }
         updateHeaderOffset();
         window.addEventListener('resize', updateHeaderOffset);
