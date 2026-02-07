@@ -28,11 +28,13 @@ header {
 
 nav {
     display: flex;
+    align-items: center;
     justify-content: center;
     gap: 2rem;
     padding: 1rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -55,6 +57,51 @@ nav a:focus {
 nav a.active {
     color: #0066cc;
     border-bottom: 2px solid #0066cc;
+}
+
+/* Theme toggle */
+.theme-toggle {
+    background: none;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.theme-toggle:hover {
+    background: #f0f0f0;
+    border-color: #ccc;
+}
+
+.theme-toggle:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+.theme-toggle svg {
+    stroke: #555;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.icon-moon {
+    display: none;
+}
+
+[data-theme="dark"] .icon-sun {
+    display: none;
+}
+
+[data-theme="dark"] .icon-moon {
+    display: block;
+    fill: #e0e0e0;
+    stroke: #e0e0e0;
 }
 
 /* Main content */
@@ -168,6 +215,45 @@ h2 {
     border-radius: 50%;
 }
 
+/* Skills section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.skill-category h3 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #555;
+    margin-bottom: 0.75rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    background: #f0f4f8;
+    color: #333;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid #e0e0e0;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.skill-tag:hover {
+    background: #e0eaf4;
+    border-color: #0066cc;
+}
+
 /* Projects grid */
 .project-grid {
     display: grid;
@@ -200,6 +286,24 @@ h2 {
     color: #666;
 }
 
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.project-tag {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    background: #f0f4f8;
+    color: #555;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid #e0e0e0;
+}
+
 .project-link {
     color: #0066cc;
     text-decoration: none;
@@ -212,6 +316,52 @@ h2 {
 }
 
 .project-link:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Writing section */
+.writing-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.writing-card {
+    max-width: 504px;
+    width: 100%;
+}
+
+.writing-embed {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+.writing-embed iframe {
+    display: block;
+    max-width: 100%;
+}
+
+.writing-more {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.writing-more a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.writing-more a:hover,
+.writing-more a:focus {
+    text-decoration: underline;
+}
+
+.writing-more a:focus {
     outline: 2px solid #0066cc;
     outline-offset: 2px;
 }
@@ -277,6 +427,150 @@ h2 {
     color: #999;
 }
 
+/* Scroll reveal animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .fade-in {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* Dark mode */
+[data-theme="dark"] body {
+    color: #e0e0e0;
+    background-color: #1a1a1a;
+}
+
+[data-theme="dark"] header {
+    background: #1e1e1e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] nav a {
+    color: #b0b0b0;
+}
+
+[data-theme="dark"] nav a:hover,
+[data-theme="dark"] nav a:focus {
+    color: #4d9fff;
+}
+
+[data-theme="dark"] nav a.active {
+    color: #4d9fff;
+    border-bottom-color: #4d9fff;
+}
+
+[data-theme="dark"] .theme-toggle {
+    border-color: #444;
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background: #333;
+    border-color: #555;
+}
+
+[data-theme="dark"] main {
+    background-color: #1e1e1e;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] h2 {
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .about-list li::before {
+    background: #4d9fff;
+}
+
+[data-theme="dark"] .skill-category h3 {
+    color: #999;
+}
+
+[data-theme="dark"] .skill-tag {
+    background: #2a2a2a;
+    color: #d0d0d0;
+    border-color: #444;
+}
+
+[data-theme="dark"] .skill-tag:hover {
+    background: #333;
+    border-color: #4d9fff;
+}
+
+[data-theme="dark"] .project-card {
+    border-color: #444;
+    border-left-color: #4d9fff;
+}
+
+[data-theme="dark"] .project-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-left-color: #3a8ae6;
+}
+
+[data-theme="dark"] .project-card h3 {
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .project-card p {
+    color: #999;
+}
+
+[data-theme="dark"] .project-tag {
+    background: #2a2a2a;
+    color: #b0b0b0;
+    border-color: #444;
+}
+
+[data-theme="dark"] .project-link {
+    color: #4d9fff;
+}
+
+[data-theme="dark"] .writing-embed {
+    border-color: #444;
+}
+
+[data-theme="dark"] .writing-more a {
+    color: #4d9fff;
+}
+
+[data-theme="dark"] #contact {
+    background: #171717;
+}
+
+[data-theme="dark"] .contact-item {
+    background: #1e1e1e;
+    border-color: #444;
+    border-left-color: #4d9fff;
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .contact-item:hover,
+[data-theme="dark"] .contact-item:focus {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    border-left-color: #3a8ae6;
+}
+
+[data-theme="dark"] .contact-item svg {
+    fill: #4d9fff;
+}
+
+[data-theme="dark"] .copyright {
+    color: #666;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
     nav {
@@ -311,6 +605,10 @@ h2 {
         padding: 1rem 1.5rem;
         min-width: 120px;
     }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Print styles */
@@ -342,8 +640,14 @@ h2 {
         text-shadow: none;
     }
 
-    .hero-cta {
+    .hero-cta,
+    .theme-toggle {
         display: none;
+    }
+
+    .fade-in {
+        opacity: 1;
+        transform: none;
     }
 
     .profile-pic {

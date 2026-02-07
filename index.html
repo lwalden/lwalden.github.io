@@ -26,8 +26,14 @@
     <header>
         <nav>
             <a href="#about">About</a>
+            <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
+            <a href="#writing">Writing</a>
             <a href="#contact">Contact</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zM12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+            </button>
         </nav>
     </header>
 
@@ -43,7 +49,7 @@
             </div>
         </section>
 
-        <section id="about">
+        <section id="about" class="fade-in">
             <h2>About Me</h2>
             <p>
                 I'm a .NET backend engineer with 11 years of experience designing and building scalable systems in Microsoft Azure. I thrive on solving complex problems—whether that means architecting resilient integrations, debugging tricky production issues, or optimizing workflows for dramatic performance gains.
@@ -57,30 +63,127 @@
             </ul>
         </section>
 
-        <section id="projects">
+        <section id="skills" class="fade-in">
+            <h2>Tech Stack</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">PowerShell</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">.NET Core</span>
+                        <span class="skill-tag">.NET Framework</span>
+                        <span class="skill-tag">Entity Framework</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Webhooks</span>
+                        <span class="skill-tag">MVC</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Azure</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Functions</span>
+                        <span class="skill-tag">Service Bus</span>
+                        <span class="skill-tag">CosmosDB</span>
+                        <span class="skill-tag">API Gateway</span>
+                        <span class="skill-tag">Key Vault</span>
+                        <span class="skill-tag">Entra</span>
+                        <span class="skill-tag">Event Grid</span>
+                        <span class="skill-tag">App Insights</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">VueJS</span>
+                        <span class="skill-tag">AngularJS</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS / SASS</span>
+                        <span class="skill-tag">Webpack</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Database</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MS SQL</span>
+                        <span class="skill-tag">CosmosDB</span>
+                        <span class="skill-tag">RavenDB</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Azure DevOps</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">GitHub</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Testing</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">XUnit</span>
+                        <span class="skill-tag">NUnit</span>
+                        <span class="skill-tag">FluentAssertions</span>
+                        <span class="skill-tag">Moq</span>
+                        <span class="skill-tag">Postman</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="fade-in">
             <h2>Projects</h2>
             <div class="project-grid">
                 <article class="project-card">
                     <h3>Conway's Game of Life</h3>
                     <p>Interactive cellular automaton simulation built with JavaScript and HTML Canvas. Features preset patterns, step-through controls, and a toroidal grid.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">HTML Canvas</span>
+                        <span class="project-tag">CSS</span>
+                    </div>
                     <a href="https://lwalden.github.io/life/" class="project-link" target="_blank" rel="noopener">View Project</a>
                 </article>
 
                 <article class="project-card">
-                    <h3>Project Two</h3>
-                    <p>Brief description of the project and technologies used.</p>
-                    <a href="#" class="project-link">View Project</a>
-                </article>
-
-                <article class="project-card">
-                    <h3>Project Three</h3>
-                    <p>Brief description of the project and technologies used.</p>
-                    <a href="#" class="project-link">View Project</a>
+                    <h3>Claude Code Quick Start Template</h3>
+                    <p>Project template that gives Claude Code session memory, structured planning, and security-conscious permissions. Includes custom slash commands for planning, setup, and session management.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Claude Code</span>
+                        <span class="project-tag">AI Tooling</span>
+                        <span class="project-tag">GitHub Actions</span>
+                        <span class="project-tag">Developer Tools</span>
+                    </div>
+                    <a href="https://github.com/lwalden/claude-code-quick-start-template" class="project-link" target="_blank" rel="noopener">View Project</a>
                 </article>
             </div>
         </section>
 
-        <section id="contact">
+        <section id="writing" class="fade-in">
+            <h2>Writing</h2>
+            <div class="writing-grid">
+                <article class="writing-card">
+                    <div class="writing-embed">
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7426023758370578432?collapsed=1" height="564" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                    </div>
+                </article>
+            </div>
+            <p class="writing-more">
+                <a href="https://www.linkedin.com/in/laurancewalden/recent-activity/all/" target="_blank" rel="noopener">View all posts on LinkedIn</a>
+            </p>
+        </section>
+
+        <section id="contact" class="fade-in">
             <h2>Get in Touch</h2>
             <p>Interested in working together? Feel free to reach out.</p>
             <div class="contact-grid">
@@ -101,7 +204,7 @@
                     <span>Resume</span>
                 </a>
             </div>
-            <p class="copyright">&copy; 2025 Laurance Walden</p>
+            <p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Laurance Walden</p>
         </section>
     </main>
 
@@ -116,7 +219,6 @@
             const documentHeight = document.documentElement.scrollHeight;
             const isAtBottom = window.scrollY + windowHeight >= documentHeight - 10;
 
-            // If at bottom of page, activate last nav link
             if (isAtBottom) {
                 navLinks.forEach(link => link.classList.remove('active'));
                 const lastNavLink = navLinks[navLinks.length - 1];
@@ -142,6 +244,39 @@
 
         window.addEventListener('scroll', updateActiveNav);
         updateActiveNav();
+
+        // Dark mode toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function setTheme(dark) {
+            document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+            localStorage.setItem('theme', dark ? 'dark' : 'light');
+        }
+
+        // Initialize: saved preference > OS preference > light
+        const saved = localStorage.getItem('theme');
+        if (saved) {
+            setTheme(saved === 'dark');
+        } else {
+            setTheme(prefersDark.matches);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            setTheme(!isDark);
+        });
+
+        // Scroll reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
