@@ -106,7 +106,6 @@ nav a.active {
 
 /* Main content */
 main {
-    padding-top: 58px;
     background-color: #f5f6f8;
     max-width: 1200px;
     margin: 0 auto;
@@ -252,7 +251,9 @@ h2 {
 
 .skill-tag:hover {
     background: #e0eaf4;
-    border-color: #0066cc;
+    border-top-color: #0066cc;
+    border-right-color: #0066cc;
+    border-bottom-color: #0066cc;
 }
 
 /* Projects grid */
@@ -347,6 +348,7 @@ h2 {
 .writing-embed iframe {
     display: block;
     max-width: 100%;
+    border: 0;
 }
 
 .writing-more {
@@ -512,10 +514,13 @@ h2 {
 
 [data-theme="dark"] .skill-tag:hover {
     background: #333;
-    border-color: #4d9fff;
+    border-top-color: #4d9fff;
+    border-right-color: #4d9fff;
+    border-bottom-color: #4d9fff;
 }
 
 [data-theme="dark"] .project-card {
+    background: #1e1e1e;
     border-color: #444;
     border-left-color: #4d9fff;
 }
@@ -526,7 +531,7 @@ h2 {
 }
 
 [data-theme="dark"] .project-card h3 {
-    color: #333;
+    color: #e0e0e0;
 }
 
 [data-theme="dark"] .project-card p {
@@ -544,7 +549,9 @@ h2 {
 }
 
 [data-theme="dark"] .writing-embed {
+    background: #1e1e1e;
     border-color: #444;
+    border-left-color: #4d9fff;
 }
 
 [data-theme="dark"] .writing-more a {
