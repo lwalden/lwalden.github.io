@@ -223,6 +223,14 @@ h2 {
     margin-top: 1rem;
 }
 
+.skill-category {
+    padding: 1rem 1.25rem;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #0066cc;
+    border-radius: 8px;
+}
+
 .skill-category h3 {
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -340,6 +348,7 @@ h2 {
     overflow: hidden;
     background: #fff;
     border: 1px solid #e0e0e0;
+    border-left: 4px solid #0066cc;
 }
 
 .writing-embed iframe {
@@ -453,7 +462,7 @@ h2 {
 /* Dark mode */
 [data-theme="dark"] body {
     color: #e0e0e0;
-    background-color: #1a1a1a;
+    background-color: #333;
 }
 
 [data-theme="dark"] header {
@@ -497,6 +506,12 @@ h2 {
     background: #4d9fff;
 }
 
+[data-theme="dark"] .skill-category {
+    background: #1e1e1e;
+    border-color: #444;
+    border-left-color: #4d9fff;
+}
+
 [data-theme="dark"] .skill-category h3 {
     color: #999;
 }
@@ -523,7 +538,7 @@ h2 {
 }
 
 [data-theme="dark"] .project-card h3 {
-    color: #e0e0e0;
+    color: #fff;
 }
 
 [data-theme="dark"] .project-card p {
