@@ -113,7 +113,7 @@ main {
 }
 
 section {
-    padding: 2.5rem 2rem;
+    padding: 1rem 2rem;
     max-width: 900px;
     margin: 0 auto;
     scroll-margin-top: var(--header-height, 60px);
@@ -215,46 +215,30 @@ h2 {
     border-radius: 50%;
 }
 
-/* Skills section */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1rem 1.5rem;
-    margin-top: 1rem;
+/* Interests section */
+#interests .interests-highlights {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
 }
 
-.skill-category h3 {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #555;
+#interests .interests-highlights li {
     margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
 }
 
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-}
-
-.skill-tag {
-    display: inline-block;
-    padding: 0.25rem 0.6rem;
-    background: #fff;
-    color: #333;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    border: 1px solid #e0e0e0;
-    border-left: 3px solid #0066cc;
-    transition: background 0.2s, border-color 0.2s;
-}
-
-.skill-tag:hover {
-    background: #e0eaf4;
-    border-top-color: #0066cc;
-    border-right-color: #0066cc;
-    border-bottom-color: #0066cc;
+#interests .interests-highlights li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 8px;
+    height: 8px;
+    background: #0066cc;
+    border-radius: 50%;
 }
 
 /* Projects grid */
@@ -524,27 +508,11 @@ h2 {
     color: #e0e0e0;
 }
 
-[data-theme="dark"] .about-list li::before {
+[data-theme="dark"] .interests-highlights li::before {
     background: #4d9fff;
 }
 
-[data-theme="dark"] .skill-category h3 {
-    color: #999;
-}
 
-[data-theme="dark"] .skill-tag {
-    background: #2a2a2a;
-    color: #d0d0d0;
-    border-color: #444;
-    border-left-color: #4d9fff;
-}
-
-[data-theme="dark"] .skill-tag:hover {
-    background: #333;
-    border-top-color: #4d9fff;
-    border-right-color: #4d9fff;
-    border-bottom-color: #4d9fff;
-}
 
 [data-theme="dark"] .project-card {
     background: #1e1e1e;
@@ -649,9 +617,6 @@ h2 {
         min-width: 120px;
     }
 
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 /* Print styles */
