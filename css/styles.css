@@ -290,6 +290,15 @@ h2 {
     color: #666;
 }
 
+/* Project "why" notes */
+.project-why {
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+    font-size: 0.92rem;
+    color: #4b5563; /* slightly darker gray for emphasis */
+    font-style: italic;
+}
+
 .project-tags {
     display: flex;
     flex-wrap: wrap;
@@ -537,6 +546,10 @@ h2 {
 
 [data-theme="dark"] .project-card p {
     color: #999;
+}
+
+[data-theme="dark"] .project-why {
+    color: #9aa7b6;
 }
 
 [data-theme="dark"] .project-tag {
