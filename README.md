@@ -5,7 +5,7 @@ I build enterprise systems, solo AI-integrated projects, and write about the rap
 
 ## What I'm Working On
 
-🔧 **[AI Agent Minder](https://github.com/lwalden/AIAgentMinder)** — Governance and lifecycle management for AI agents, built in C#/.NET
+🔧 **[AI Agent Minder](https://github.com/lwalden/AIAgentMinder)** — Governance and lifecycle management for Claude Code
 
 ✍️ **[Blog](https://lwalden.dev/posts)** — Writing about Cloud Architecture, AI tooling and integration for enterprise and solo development.
 
